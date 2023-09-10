@@ -8,7 +8,7 @@
     android:background="@drawable/background">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation"
+        android:id="@+id/ltAnimation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:lottie_rawRes="@raw/animation_lmdg6v3i"

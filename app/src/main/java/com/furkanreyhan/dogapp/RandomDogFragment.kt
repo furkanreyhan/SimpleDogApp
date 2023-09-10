@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import coil.load
+import com.airbnb.lottie.LottieAnimationView
 import com.furkanreyhan.dogapp.databinding.FragmentRandomdogBinding
 import com.furkanreyhan.dogapp.model.DogResponse
 import com.furkanreyhan.dogapp.network.RemoteService
@@ -16,6 +17,7 @@ import retrofit2.Response
 class RandomDogFragment : Fragment() {
 
     private lateinit var binding: FragmentRandomdogBinding
+    private lateinit var animationView: LottieAnimationView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +30,9 @@ class RandomDogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        animationView = binding.ltAnimation
+        showLoadingAnimation()
+
         val dogApi = RemoteService.dogApi
         val call = dogApi.getDog()
 
@@ -39,13 +44,25 @@ class RandomDogFragment : Fragment() {
 
                     imageUrl?.let {
                         binding.ivApiDog.load(it)
+                        hideLoadingAnimation()
                     }
                 } else {
+                    hideLoadingAnimation()
                 }
             }
 
             override fun onFailure(call: Call<DogResponse>, t: Throwable) {
             }
         })
+    }
+
+    private fun showLoadingAnimation() {
+        animationView.visibility = View.VISIBLE
+        animationView.playAnimation()
+    }
+
+    private fun hideLoadingAnimation() {
+        animationView.visibility = View.GONE
+        animationView.cancelAnimation()
     }
 }

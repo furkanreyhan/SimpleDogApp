@@ -9,9 +9,16 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Spinner
+import com.furkanreyhan.dogapp.databinding.FragmentHttpdogBinding
+import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 
 class HttpDogFragment : Fragment() {
+
+    private lateinit var binding : FragmentHttpdogBinding
+    private lateinit var animationView: LottieAnimationView
+    private lateinit var spinner: Spinner
+    private lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,13 +27,21 @@ class HttpDogFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_httpdog, container, false)
+        binding = FragmentHttpdogBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        animationView = binding.ltAnimation
+        showLoadingAnimation()
+
+        spinner = binding.spinner
+        imageView = binding.ivDog
 
         //strings.xml de tanımladığımız Dogs arrayini dogs'a atıyoruz.
         val dogs = resources.getStringArray(R.array.Dogs)
 
-        val spinner = view.findViewById<Spinner>(R.id.spinner)
-        val imageView = view.findViewById<ImageView>(R.id.ivDog)
 
         if (spinner != null && imageView != null) {
             val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, dogs)
@@ -43,13 +58,22 @@ class HttpDogFragment : Fragment() {
                     Glide.with(requireContext())
                         .load(selectedDogUrl)
                         .into(imageView)
+                    hideLoadingAnimation()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
                 }
             }
         }
+    }
 
-        return view
+    private fun showLoadingAnimation() {
+        animationView.visibility = View.VISIBLE
+        animationView.playAnimation()
+    }
+
+    private fun hideLoadingAnimation() {
+        animationView.visibility = View.GONE
+        animationView.cancelAnimation()
     }
 }
