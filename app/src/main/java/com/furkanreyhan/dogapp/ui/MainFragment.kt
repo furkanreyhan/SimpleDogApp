@@ -1,10 +1,11 @@
-package com.furkanreyhan.dogapp
+package com.furkanreyhan.dogapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.furkanreyhan.dogapp.R
 import com.furkanreyhan.dogapp.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
