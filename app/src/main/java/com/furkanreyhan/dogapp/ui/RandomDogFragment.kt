@@ -42,10 +42,10 @@ class RandomDogFragment : Fragment() {
             }
         })
 
-        viewModel.fetchRandomDogImage()
+        viewModel.getRandomDogImage()
 
         binding.randomButton.setOnClickListener {
-            viewModel.fetchRandomDogImage()
+            viewModel.getRandomDogImage()
         }
     }
 
