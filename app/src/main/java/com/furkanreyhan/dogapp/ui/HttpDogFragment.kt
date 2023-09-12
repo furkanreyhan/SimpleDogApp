@@ -17,15 +17,13 @@ class HttpDogFragment : Fragment() {
 
     private lateinit var binding: FragmentHttpdogBinding
     private lateinit var viewModel: HttpDogViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         binding = FragmentHttpdogBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,6 +32,7 @@ class HttpDogFragment : Fragment() {
         val dogs = resources.getStringArray(R.array.Dogs)
 
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, dogs)
+
         binding.spinner.adapter = adapter
 
         binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -46,11 +45,9 @@ class HttpDogFragment : Fragment() {
                 val selectedDogUrl = dogs[position]
                 viewModel.setSelectedDogImageUrl(selectedDogUrl)
             }
-
             override fun onNothingSelected(parent: AdapterView<*>) {
             }
         }
-
         viewModel.selectedDogImageUrl.observe(viewLifecycleOwner, Observer { imageUrl ->
             imageUrl?.let {
                 Glide.with(requireContext())

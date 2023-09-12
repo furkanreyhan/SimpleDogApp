@@ -7,8 +7,7 @@ import androidx.lifecycle.ViewModel
 class HttpDogViewModel : ViewModel() {
     private val _selectedDogImageUrl = MutableLiveData<String>()
     val selectedDogImageUrl: LiveData<String> = _selectedDogImageUrl
-
     fun setSelectedDogImageUrl(imageUrl: String) {
-        _selectedDogImageUrl.value = imageUrl
+        _selectedDogImageUrl.value = "https://http.dog/$imageUrl.jpg"
     }
 }

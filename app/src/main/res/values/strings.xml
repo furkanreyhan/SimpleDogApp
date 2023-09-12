@@ -4,34 +4,72 @@
     <string name="httpDog">HTTP DOG</string>
     <string name="randomDog">Random DOG</string>
     <string name="selectDog">Select Dog:</string>
-    <string name="selected_item">Selected item:</string>
     <string name="select_random_dog">Select Random Dog</string>
 
     <string-array name="Dogs">
-        <item>https://http.dog/100.jpg</item>
-        <item>https://http.dog/101.jpg</item>
-        <item>https://http.dog/102.jpg</item>
-        <item>https://http.dog/103.jpg</item>
-        <item>https://http.dog/201.jpg</item>
-        <item>https://http.dog/202.jpg</item>
-        <item>https://http.dog/203.jpg</item>
-        <item>https://http.dog/204.jpg</item>
-        <item>https://http.dog/205.jpg</item>
-        <item>https://http.dog/206.jpg</item>
-        <item>https://http.dog/207.jpg</item>
-        <item>https://http.dog/208.jpg</item>
-        <item>https://http.dog/218.jpg</item>
-        <item>https://http.dog/226.jpg</item>
-        <item>https://http.dog/300.jpg</item>
-        <item>https://http.dog/301.jpg</item>
-        <item>https://http.dog/302.jpg</item>
-        <item>https://http.dog/303.jpg</item>
-        <item>https://http.dog/304.jpg</item>
-        <item>https://http.dog/305.jpg</item>
-        <item>https://http.dog/306.jpg</item>
-        <item>https://http.dog/307.jpg</item>
-        <item>https://http.dog/308.jpg</item>
-        <item>https://http.dog/400.jpg</item>
+        <item>100</item>
+        <item>101</item>
+        <item>102</item>
+        <item>103</item>
+        <item>201</item>
+        <item>202</item>
+        <item>203</item>
+        <item>204</item>
+        <item>205</item>
+        <item>206</item>
+        <item>207</item>
+        <item>208</item>
+        <item>218</item>
+        <item>226</item>
+        <item>300</item>
+        <item>301</item>
+        <item>302</item>
+        <item>303</item>
+        <item>304</item>
+        <item>305</item>
+        <item>306</item>
+        <item>307</item>
+        <item>308</item>
+        <item>400</item>
+        <item>401</item>
+        <item>402</item>
+        <item>403</item>
+        <item>404</item>
+        <item>405</item>
+        <item>406</item>
+        <item>407</item>
+        <item>408</item>
+        <item>409</item>
+        <item>410</item>
+        <item>411</item>
+        <item>412</item>
+        <item>413</item>
+        <item>414</item>
+        <item>415</item>
+        <item>416</item>
+        <item>417</item>
+        <item>418</item>
+        <item>419</item>
+        <item>420</item>
+        <item>421</item>
+        <item>422</item>
+        <item>423</item>
+        <item>424</item>
+        <item>425</item>
+        <item>426</item>
+        <item>427</item>
+        <item>428</item>
+        <item>429</item>
+        <item>430</item>
+        <item>431</item>
+        <item>432</item>
+        <item>433</item>
+        <item>434</item>
+        <item>435</item>
+
+
+
+
 
     </string-array>
 
