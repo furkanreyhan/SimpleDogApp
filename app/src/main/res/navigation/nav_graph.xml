@@ -6,7 +6,24 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.furkanreyhan.dogapp.MainFragment"
+        android:name="com.furkanreyhan.dogapp.ui.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_httpDogFragment"
+            app:destination="@id/httpDogFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_randomDogFragment"
+            app:destination="@id/randomDogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/httpDogFragment"
+        android:name="com.furkanreyhan.dogapp.ui.HttpDogFragment"
+        android:label="fragment_httpdog"
+        tools:layout="@layout/fragment_httpdog" />
+    <fragment
+        android:id="@+id/randomDogFragment"
+        android:name="com.furkanreyhan.dogapp.ui.RandomDogFragment"
+        android:label="fragment_randomdog"
+        tools:layout="@layout/fragment_randomdog" />
 </navigation>
